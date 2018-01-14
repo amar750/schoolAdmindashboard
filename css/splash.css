@@ -1,0 +1,23 @@
+@import url(https://fonts.googleapis.com/css?family=Gentium+Basic);
+
+*{
+	margin: 0;
+	padding: 0;
+}
+.mainContainer{
+	display: block;
+	margin: auto;
+	text-align: center;
+}
+.mainContainer img{
+	display: none;
+}
+
+/*h1{
+	line-height: 100vh;
+	text-align: center;
+	display: block;
+	font-family: 'Gentium Basic', serif;
+	font-weight: bold;
+	font-size: 35px;
+	}*/

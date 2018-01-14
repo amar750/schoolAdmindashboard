@@ -1,0 +1,52 @@
+@import url(https://fonts.googleapis.com/css?family=Gentium+Basic);
+
+.heading{
+	background: #ffffff;
+	padding: 10px;
+	box-shadow:0px 4px 8px -2px #000;
+	color: #000000;
+	font-size: 20px;
+/*	font-weight: bold;*/
+	font-family: 'Gentium Basic', serif;
+	border-left: 5px solid #e74c3c;
+}
+.heading img{
+	margin-top: -10px;
+	margin-right: 5px;
+}
+
+#smallContainer{
+	background: #ffffff;
+	padding: 10px;
+	box-shadow:0px 4px 8px -2px #000;
+	color: #000000;
+	/*font-size: 20px;*/
+/*	font-weight: bold;*/
+	font-family: 'Gentium Basic', serif;
+	/*border-left: 5px solid #12ff11;*/
+}
+
+.teacherSection,.parentSection{
+
+	background: #ffffff;
+	border:1px solid black;
+}
+
+.sideBarContainer ul li #img1,#img2{
+
+	width: 22px;
+	height: auto;
+}
+
+.sideBarContainer ul li #img2{
+	display: none;
+}
+
+.sideBarContainer ul li img{
+	cursor: pointer;
+}
+.sideBarContainer ul ul{
+	margin-top: 10px;
+	margin-left: 25px;
+	display: none;
+}

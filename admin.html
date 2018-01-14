@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html ng-app="myAdmin">
+<head>
+  	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/admin.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+   <link  rel="stylesheet" href="utils/css/bootstrap.min.css">
+
+   <link rel="stylesheet" href="utils/css/fontAwesome/css/font-awesome.min.css">
+</head>
+<body style="background:#ecf4fb;">
+<nav class="navbar navbar-fixed-top">
+  <div class="container-fluid topBar">
+    <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-7">
+		    <ul class="nav navbar-nav">
+		      <li><img src="images/adminLogo.jpg" class="img-responsive" width="100" height="50"></li>
+		      <li><span style="line-height:90px; font-family: 'Gentium Basic', serif; font-size:30px; font-weight:bold;">SCHOOL NAME</span></li>
+		    </ul>
+      </div>
+
+      <div class="col-xs-12 col-sm-5 text-right mymenu">
+       <!--  <nav class="navbar navbar-default homeContact"> -->
+        <!--   <div class="pull-right logout"> -->
+          	<span id="logout" ng-click="logOut()" ng-controller="commonController">LOG OUT</span>
+         <!--  </div>
+        </nav> 
+         -->
+      </div>
+    </div>
+    </div>
+  </div>
+</nav> 
+<div class="sideBar">
+	<div class="sideBarContainer" ng-controller="commonController">
+		<ul>
+			<li ng-class="{active: $route.current.activetab == 'dashboard'}"><i class="fa fa-home" aria-hidden="true"></i><a href="#/!">DASHBOARD</a></li>
+			<li ng-class="{active: $route.current.activetab == 'institutenotice'}"><i class="fa fa-exclamation-circle" aria-hidden="true"></i><a href="#!/institutenotice">INSTITUTE NOTICE BOARD</a></li>
+			<li ng-class="{active: $route.current.activetab == 'classnotice'}"><i class="fa fa-exclamation" aria-hidden="true"></i><a href="#!/classnotice">CLASS NOTICE BOARD</a></li>
+		
+      <li ng-class="{active: $route.current.activetab == 'addUser'}"><i class="fa fa-users" aria-hidden="true"></i><a href="#!/addUser">ADD USER</a></li>
+
+        <!-- start diary -->
+      <li ng-class="{active: $route.current.activetab == 'diary'}"><i class="fa fa-book" aria-hidden="true"></i><a href="#!/diary">DIARY</a> <img src="images/dropDown.png" id="img1" class="img31" ng-click="dropDown3()"><img src="images/dropUp.png" id="img2" class="img32"  ng-click="dropUp3()"></li><!-- end of diary -->
+
+         <ul id="nestedList3">
+             <li ng-class="{active: $route.current.activetab == 'homeworkDiary'}"><a href="#!/homeworkDiary">HOME WORK</a></li>
+              <li ng-class="{active: $route.current.activetab == 'assignment'}"><a href="#!/assignment">ASSIGNMENT</a></li>
+
+              <li ng-class="{active: $route.current.activetab == 'prayer'}"><a href="#!/prayer">PRAYER</a></li>
+
+              <li ng-class="{active: $route.current.activetab == 'contactDetails'}"><a href="#!/contactDetails">CONTACT DETAILS</a></li>
+          </ul>
+
+       
+
+			
+      <li ng-class="{active: $route.current.activetab == 'timetable'}"><i class="fa fa-calendar" aria-hidden="true"></i><a href="#!/timetable">TIME TABLE</a> <img src="images/dropDown.png" id="img1" class="img21" ng-click="dropDown2()"><img src="images/dropUp.png" id="img2" class="img22" ng-click="dropUp2()"></li><!-- end of time table -->
+
+         <ul id="nestedList2">
+             <li ng-class="{active: $route.current.activetab == 'classTimeTable'}"><a href="#!/classTimeTable">CLASS TIME TABLE</a></li>
+              <li ng-class="{active: $route.current.activetab == 'test'}"><a href="#!/test">TEST</a></li>
+
+              <li ng-class="{active: $route.current.activetab == 'event'}"><a href="#!/event">EVENTS</a></li>
+
+              <li ng-class="{active: $route.current.activetab == 'transportTiming'}"><a href="#!/transportTiming">TRANSPORT TIMING</a></li>
+        </ul>
+
+        <li ng-class="{active: $route.current.activetab == 'remark'}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i><a href="#!/remark">REMARKS</a><img src="images/dropDown.png" id="img1" class="img11" ng-click="dropDown1()"><img src="images/dropUp.png" id="img2" class="img12" ng-click="dropUp1()"></li>
+
+         <ul id="nestedList1">
+             <li ng-class="{active: $route.current.activetab == 'homework'}"><a href="#!/homework">HOME WORK</a></li>
+              <li ng-class="{active: $route.current.activetab == 'classwork'}"><a href="#!/classwork">CLASS WORK</a></li>
+
+              <li ng-class="{active: $route.current.activetab == 'leave'}"><a href="#!/leave">LEAVE</a></li>
+
+              <li ng-class="{active: $route.current.activetab == 'uniform'}"><a href="#!/uniform">UNIFORM</a></li>
+
+              <li ng-class="{active: $route.current.activetab == 'generalRemark'}"><a href="#!/generalRemark">GENERAL REMARKS</a></li>
+          </ul>
+       <li ng-class="{active: $route.current.activetab == 'chat'}"><i class="fa fa-comments" aria-hidden="true"></i><a href="#!/chat">CHATS</a></li>
+
+      
+		</ul>
+	</div>
+</div><!-- end of sidebar -->
+
+<p id="footerContact">Designed & Developed By <a target="_blank" href="https://www.pyplyn.co">Pyplyn</a>.</p>
+<div id="mainContainer">
+	<ng-view></ng-view>
+</div><!-- end of main container -->
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+<script type="text/javascript" src="utils/firebase/firebase.js"></script>
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>   
+<script type="text/javascript" src="utils/js/angular.min.js"></script> 
+<script type="text/javascript" src="utils/js/angular-route.min.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+
+<script src="utils/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="controller/admin.controller.js"></script>
+</body>
+</html>
